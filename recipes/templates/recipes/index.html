@@ -1,0 +1,11 @@
+{% extends "main/base.html" %} {% block content %}
+<h1>recipe index</h1>
+<a href="{% url 'recipes:newrecipe' %}">Create recipe</a>
+<ul>
+  {% if not recipes_list %}
+  <h4>No items in this list</h4>
+  {% else %} {% for recipe in recipes_list %}
+  <li>{{recipe.name}}</li>
+  {% endfor %} {% endif %}
+</ul>
+{% endblock %}
