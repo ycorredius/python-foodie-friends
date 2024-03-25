@@ -1,8 +1,8 @@
 databases:
   - name: python-foodie-friends
     plan: free
-    databaseName: python-foodie-friends
-    user: python-foodie-friends
+    databaseName: pythonfoodiefriends
+    user: pythonfoodiefriends
 
 services:
   - type: web
