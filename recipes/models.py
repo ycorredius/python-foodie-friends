@@ -10,7 +10,7 @@ class Recipe(models.Model):
     is_private = models.BooleanField(default=False)
     prep_time = models.IntegerField()
     cook_time = models.IntegerField()
-    difficulty = models.CharField()
+    difficulty = models.CharField(max_length=50)
     servings = models.IntegerField()
     comments_count = models.IntegerField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)

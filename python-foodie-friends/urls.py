@@ -24,7 +24,6 @@ router = routers.DefaultRouter()
 router.register(r'recipes', views.RecipeView, 'recipe')
 
 urlpatterns = [
-    path('', include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls))
 ]
