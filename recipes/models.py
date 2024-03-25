@@ -5,6 +5,7 @@ from django.db import models
 # Create your models here.
 
 class Recipe(models.Model):
+    id = models.BigAutoField(primary_key=True)
     name = models.CharField(max_length=100)
     instructions = models.TextField()
     is_private = models.BooleanField(default=False)
@@ -12,7 +13,7 @@ class Recipe(models.Model):
     cook_time = models.IntegerField()
     difficulty = models.CharField(max_length=50)
     servings = models.IntegerField()
-    comments_count = models.IntegerField()
+    comments_count = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):

@@ -1,8 +1,11 @@
-from django.urls import path
+from django.urls import re_path,path
 from . import  views
 
 app_name="recipes"
 urlpatterns = [
-    path("", views.RecipeView.as_view(),"recipes"),
-    path('auth/', views.AuthenticationView.as_view(),"auth")
+    re_path('login', views.login),
+    re_path('signup', views.signup),
+    re_path('get_token', views.get_token),
+    re_path('recipes', views.recipes),
+    path('recipe/<int:pk>/', views.recipe)
 ]
