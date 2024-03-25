@@ -1,0 +1,22 @@
+databases:
+  - name: python-foodie-friends
+    plan: free
+    databaseName: python-foodie-friends
+    user:python-foodie-friends
+
+services:
+  - type: web
+    plan: free
+    name: python-foodie-friends
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "python -m gunicorn python-foodie-friends.asgi:application -k uvicorn.workers.UvicornWorker"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: python-foodie-friends-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
