@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-ef(_1g6x7l^7fn(g-q7cns%=$9wk(wyw&%6kds*$r2xxk84g&k
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://python-foodie-friends.onrender.com"
+    "*"
 ]
 
 
